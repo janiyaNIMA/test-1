@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Graph - WUSL{% endblock %}
+
+{% block head %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/moden.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="title">
+        <h1>Graph</h1>
+        <p>This is the graph page.</p>
+    </div>
+    <div class="content">
+            <canvas id="myChart" width="1000" height="300"></canvas>
+            <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: {{ labels | safe }},
+                        datasets: [
+                            {
+                                label: 'Sample Data',
+                                data: {{ values | safe }},
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+    </div>
+</div>
+{% endblock %}

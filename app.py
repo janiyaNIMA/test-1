@@ -34,6 +34,22 @@ def form():
 def tracker():
     return render_template('tracker.html')
 
+@app.route('/graph')
+def graph():
+    data = [
+        {"name": "Bob", "value": 1587},
+        {"name": "Alice", "value": 5876},
+        {"name": "John", "value": 9874},
+        {"name": "Nora", "value": 1234},
+        {"name": "Jane", "value": 3456},
+        {"name": "Doe", "value": 4567}
+    ]
+
+    values = [row["value"] for row in data]
+    labels = [row["name"] for row in data]
+
+    return render_template('graph.html', values=values, labels=labels)
+
 # Error handlers
 @app.errorhandler(404)
 def page_not_found(error):

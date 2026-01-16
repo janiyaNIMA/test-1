@@ -13,16 +13,17 @@
         <i class="fas fa-bars"></i>
     </button>
 
+    <nav class="side-bar" id="sidebar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/form">Form</a></li>
+            <li><a href="/tracker">Tracker</a></li>
+            <li><a href="/graph">Graph</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
-        <nav class="side-bar" id="sidebar">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/form">Form</a></li>
-                <li><a href="/tracker">Tracker</a></li>
-            </ul>
-        </nav>
-
         {% block content %}{% endblock %}
     </div>
 

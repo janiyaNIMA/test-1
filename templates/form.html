@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<main>
+
 {% for message in get_flashed_messages() %}
     <div class="alert alert-success">{{ message }}</div>
 {% endfor %}
@@ -43,5 +45,6 @@
         </form>
     </div>
 {% endif %}
+</main>
 {% endblock %}
 
