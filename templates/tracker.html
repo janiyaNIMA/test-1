@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Tracker - WUSL{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="header">
+            <h1><i class="fas fa-calendar-alt"></i> Due Date Tracker</h1>
+            <div class="week-navigation">
+                <button class="nav-button" id="prev-week">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="week-display" id="week-display">October 23 - 29, 2023</div>
+                <button class="nav-button" id="next-week">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+    <div class="calendar-container">
+            <div class="calendar-header">
+                <div class="time-header">Time</div>
+                <div class="day-header">Mon</div>
+                <div class="day-header">Tue</div>
+                <div class="day-header">Wed</div>
+                <div class="day-header">Thu</div>
+                <div class="day-header">Fri</div>
+                <div class="day-header weekend">Sat</div>
+                <div class="day-header weekend">Sun</div>
+            </div>
+            
+            <div class="calendar-body" id="calendar-body">
+                <!-- Time slots will be generated here -->
+            </div>
+        </div>
+
+        <footer>
+            <p>Track your due dates efficiently • Double-click on any time slot to add a new due date</p>
+        </footer>
+    
+{% endblock %}
