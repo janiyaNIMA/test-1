@@ -6,11 +6,15 @@
         <title>{% block title %}WUSL{% endblock %}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/moden.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     {% endblock %}
+</head>
 <body>
-    <header>
-        <nav>
+    <button class="sidebar-toggle show" id="toggleBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="container">
+        <nav class="side-bar" id="sidebar">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
@@ -18,14 +22,14 @@
                 <li><a href="/tracker">Tracker</a></li>
             </ul>
         </nav>
-    </header>
 
-    <div class="container">
         {% block content %}{% endblock %}
     </div>
 
     <footer>
-        &copy; 2023 WUSL
+        <p>&copy; 2023 WUSL</p>
     </footer>
+
+    <script src="{{ url_for('static', filename='js/moden.js') }}"></script>
 </body>
 </html>
